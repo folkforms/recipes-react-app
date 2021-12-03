@@ -7,7 +7,7 @@ const ListRow = props => {
         {props.recipe.name}
       </div>
       <div className="list-row-tags">
-        {props.recipe.metaData.tags}
+        {props.recipe.metaData.tags.join(", ")}
       </div>
     </div>
   );
