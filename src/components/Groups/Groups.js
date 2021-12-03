@@ -1,5 +1,6 @@
 import React from 'react';
 import './Groups.css';
+import GroupItem from './GroupItem';
 
 const Groups = props => {
   const { recipes } = props;
@@ -12,7 +13,7 @@ const Groups = props => {
             <div className="group">
               <div className="group-name">{key}</div>
               {tags[key].map(recipe => (
-                <div className="item">{recipe.name}</div>
+                <GroupItem recipe={recipe}/>
               ))}
             </div>
           </>
@@ -32,7 +33,6 @@ const orderByTags = recipes => {
       tags[tag].push(recipe);
     });
   })
-  // console.log(`#### tags = ${JSON.stringify(tags)}`);
   return tags;
 }
 

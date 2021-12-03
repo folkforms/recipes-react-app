@@ -17,7 +17,7 @@ const Recipe = props => {
   const { recipe } = props;
   return (
     <>
-      <div className="modal">
+      <div className="modal" key={"modal-" + recipe.filename}>
         <div className="modal-content">
           <RecipeHeader name={recipe.name} onClose={props.onClose} />
           <RecipeBody recipe={recipe} />
