@@ -4,7 +4,7 @@ import ListTitle from "./ListTitle";
 import ListHeaderRow from "./ListHeaderRow";
 import ListFilter from "./ListFilter";
 import ListRows from "./ListRows";
-import RecipeView from "./RecipeView";
+import Recipe from "./Recipe/Recipe";
 
 const List = props => {
   // Filters
@@ -27,17 +27,17 @@ const List = props => {
   const allRecipes = props.recipes;
   const recipes = applyFilter(allRecipes, filters);
 
-  // Recipe view
-  const [showRecipeView, setShowRecipeView] = useState("");
+  // Recipe details
+  const [showRecipeModal, setShowRecipeModal] = useState("");
 
   return (
     <>
-      {showRecipeView ? <RecipeView recipe={showRecipeView} onClose={() => setShowRecipeView("")} /> : null}
+      {showRecipeModal ? <Recipe recipe={showRecipeModal} onClose={() => setShowRecipeModal("")} /> : null}
       <div className="list">
         <ListTitle numRecipes={recipes.length} />
         <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
         <ListHeaderRow />
-        <ListRows recipes={recipes} onClickRecipe={setShowRecipeView} />
+        <ListRows recipes={recipes} onClickRecipe={setShowRecipeModal} />
       </div>
     </>
   );

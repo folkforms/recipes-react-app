@@ -1,0 +1,12 @@
+.recipe-header {
+  display: flex;
+}
+
+.recipe-header .title {
+  background-color: rosybrown;
+}
+
+.recipe-header .close-button {
+  background-color: royalblue;
+  margin-left: auto;
+}

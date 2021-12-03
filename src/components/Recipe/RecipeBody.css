@@ -1,0 +1,12 @@
+.recipe-body {
+  background-color: teal;
+}
+
+.recipe-body .section {
+  background-color: seagreen;
+  font-weight: 600;
+}
+
+.recipe-body .section .item {
+  background-color: slategrey;
+}
