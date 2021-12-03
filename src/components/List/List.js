@@ -4,7 +4,7 @@ import ListTitle from "./ListTitle";
 import ListHeaderRow from "./ListHeaderRow";
 import ListFilter from "./ListFilter";
 import ListRows from "./ListRows";
-import Recipe from "./Recipe/Recipe";
+import Recipe from "../Recipe/Recipe";
 
 const List = props => {
   // Filters

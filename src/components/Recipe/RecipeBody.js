@@ -3,6 +3,7 @@ import './RecipeBody.css';
 
 const RecipeBody = props => {
   const { recipe } = props;
+  console.log(JSON.stringify(recipe));
   let count = 0;
   return (
     <>
