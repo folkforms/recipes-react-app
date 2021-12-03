@@ -1,116 +1,290 @@
 [
-  {
-     "recipe":"Cake",
-     "filename":"cli/test-data/input/recipe-1.txt",
-     "metaDataUnparsed":[
-        "TAGS: tag1, tag2",
-        "SHOPPING LIST: item 1, item 2",
-        "FROM: https://www.google.com",
-        "SERVES: 2",
-        "TIME: 1 hour"
-     ],
-     "ingredients":[
-        "1 kg sugar",
-        "5 eggs",
-        "500g flour"
-     ],
-     "directions":[
-        "Bake a cake"
-     ],
-     "notes":[
-        "Any notes go here"
-     ],
-     "leftovers":[
-        "1 egg"
-     ],
-     "fullText":[
-        "# Cake",
-        "",
-        "TAGS: tag1, tag2",
-        "SHOPPING LIST: item 1, item 2",
-        "FROM: https://www.google.com",
-        "SERVES: 2",
-        "TIME: 1 hour",
-        "",
-        "## Ingredients",
-        "",
-        "1 kg sugar",
-        "5 eggs",
-        "500g flour",
-        "",
-        "## Directions",
-        "",
-        "- Bake a cake",
-        "",
-        "## Notes",
-        "",
-        "Any notes go here",
-        "",
-        "## Leftovers",
-        "",
-        "- 1 egg",
-        ""
-     ]
-  },
-  {
-     "recipe":"Irish Breakfast",
-     "filename":"cli/test-data/input/recipe-2.txt",
-     "metaDataUnparsed":[
-        "TAGS: tag1, tag2",
-        "SHOPPING LIST: item 1, item 2",
-        "FROM: https://www.google.com",
-        "SERVES: 1",
-        "TIME: 30 mins"
-     ],
-     "ingredients":[
-        "3 slices bacon",
-        "2 sausages",
-        "1 egg",
-        "2 tomatoes"
-     ],
-     "directions":[
-        "Fry everything"
-     ],
-     "notes":[
-        "Any notes go here"
-     ],
-     "leftovers":[
-        "3 slices bacon",
-        "4 sausages",
-        "5 eggs",
-        "3 tomatoes"
-     ],
-     "fullText":[
-        "# Irish Breakfast",
-        "",
-        "TAGS: tag1, tag2",
-        "SHOPPING LIST: item 1, item 2",
-        "FROM: https://www.google.com",
-        "SERVES: 1",
-        "TIME: 30 mins",
-        "",
-        "## Ingredients",
-        "",
-        "3 slices bacon",
-        "2 sausages",
-        "1 egg",
-        "2 tomatoes",
-        "",
-        "## Directions",
-        "",
-        "- Fry everything",
-        "",
-        "## Notes",
-        "",
-        "Any notes go here",
-        "",
-        "## Leftovers",
-        "",
-        "- 3 slices bacon",
-        "- 4 sausages",
-        "- 5 eggs",
-        "- 3 tomatoes",
-        ""
-     ]
-  }
+   {
+      "name":"Cake",
+      "filename":"cli/test-data/input/recipe-1.txt",
+      "ingredients":[
+         "1 kg sugar",
+         "5 eggs",
+         "500g flour"
+      ],
+      "directions":[
+         "Bake a cake"
+      ],
+      "notes":[
+         "Any notes go here"
+      ],
+      "leftovers":[
+         "1 egg"
+      ],
+      "fullText":[
+         "# Cake",
+         "",
+         "TAGS: tag1",
+         "SHOPPING LIST: item 1, item 2",
+         "FROM: https://www.google.com",
+         "SERVES: 2",
+         "TIME: 1 hour",
+         "",
+         "## Ingredients",
+         "",
+         "1 kg sugar",
+         "5 eggs",
+         "500g flour",
+         "",
+         "## Directions",
+         "",
+         "- Bake a cake",
+         "",
+         "## Notes",
+         "",
+         "Any notes go here",
+         "",
+         "## Leftovers",
+         "",
+         "- 1 egg",
+         ""
+      ],
+      "metaData":{
+         "tags":[
+            "tag1"
+         ],
+         "shoppingList":[
+            "item 1",
+            "item 2"
+         ],
+         "from":"https://www.google.com",
+         "serves":"2",
+         "time":"1 hour"
+      }
+   },
+   {
+      "name":"Irish Breakfast",
+      "filename":"cli/test-data/input/recipe-2.txt",
+      "ingredients":[
+         "3 slices bacon",
+         "2 sausages",
+         "1 egg",
+         "2 tomatoes"
+      ],
+      "directions":[
+         "Fry everything"
+      ],
+      "notes":[
+         "Any notes go here"
+      ],
+      "leftovers":[
+         "3 slices bacon",
+         "4 sausages",
+         "5 eggs",
+         "3 tomatoes"
+      ],
+      "fullText":[
+         "# Irish Breakfast",
+         "",
+         "TAGS: tag2",
+         "SHOPPING LIST: item 1, item 2",
+         "FROM: https://www.google.com",
+         "SERVES: 1",
+         "TIME: 30 mins",
+         "",
+         "## Ingredients",
+         "",
+         "3 slices bacon",
+         "2 sausages",
+         "1 egg",
+         "2 tomatoes",
+         "",
+         "## Directions",
+         "",
+         "- Fry everything",
+         "",
+         "## Notes",
+         "",
+         "Any notes go here",
+         "",
+         "## Leftovers",
+         "",
+         "- 3 slices bacon",
+         "- 4 sausages",
+         "- 5 eggs",
+         "- 3 tomatoes",
+         ""
+      ],
+      "metaData":{
+         "tags":[
+            "tag2"
+         ],
+         "shoppingList":[
+            "item 1",
+            "item 2"
+         ],
+         "from":"https://www.google.com",
+         "serves":"1",
+         "time":"30 mins"
+      }
+   },
+   {
+      "name":"Foo",
+      "filename":"cli/test-data/input/recipe-3.txt",
+      "ingredients":[
+         "1 foo"
+      ],
+      "directions":[
+         "Fry everything"
+      ],
+      "notes":[
+         "Any notes go here"
+      ],
+      "leftovers":[
+         "1/2 foo"
+      ],
+      "fullText":[
+         "# Foo",
+         "",
+         "TAGS: tag3",
+         "SHOPPING LIST: item 1, item 2",
+         "FROM: https://www.google.com",
+         "SERVES: 1",
+         "TIME: 90 minutes",
+         "",
+         "## Ingredients",
+         "",
+         "1 foo",
+         "",
+         "## Directions",
+         "",
+         "- Fry everything",
+         "",
+         "## Notes",
+         "",
+         "Any notes go here",
+         "",
+         "## Leftovers",
+         "",
+         "- 1/2 foo",
+         ""
+      ],
+      "metaData":{
+         "tags":[
+            "tag3"
+         ],
+         "shoppingList":[
+            "item 1",
+            "item 2"
+         ],
+         "from":"https://www.google.com",
+         "serves":"1",
+         "time":"90 minutes"
+      }
+   },
+   {
+      "name":"Bar",
+      "filename":"cli/test-data/input/recipe-4.txt",
+      "ingredients":[
+         "1 bar"
+      ],
+      "directions":[
+         "Fry everything"
+      ],
+      "notes":[
+         "Any notes go here"
+      ],
+      "leftovers":[
+         "1/2 bar"
+      ],
+      "fullText":[
+         "# Bar",
+         "",
+         "TAGS: tag2, tag4",
+         "SHOPPING LIST: item 1, item 2",
+         "FROM: https://www.google.com",
+         "SERVES: 1",
+         "TIME: 1h 30m",
+         "",
+         "## Ingredients",
+         "",
+         "1 bar",
+         "",
+         "## Directions",
+         "",
+         "- Fry everything",
+         "",
+         "## Notes",
+         "",
+         "Any notes go here",
+         "",
+         "## Leftovers",
+         "",
+         "- 1/2 bar",
+         ""
+      ],
+      "metaData":{
+         "tags":[
+            "tag2",
+            "tag4"
+         ],
+         "shoppingList":[
+            "item 1",
+            "item 2"
+         ],
+         "from":"https://www.google.com",
+         "serves":"1",
+         "time":"1h 30m"
+      }
+   },
+   {
+      "name":"Muk",
+      "filename":"cli/test-data/input/recipe-5.txt",
+      "ingredients":[
+         "1 muk"
+      ],
+      "directions":[
+         "Fry everything"
+      ],
+      "notes":[
+         "Any notes go here"
+      ],
+      "leftovers":[
+         "1/2 muk"
+      ],
+      "fullText":[
+         "# Muk",
+         "",
+         "TAGS: tag1, tag5",
+         "SHOPPING LIST: item 1, item 2",
+         "FROM: https://www.google.com",
+         "SERVES: 1",
+         "TIME: 1 hr",
+         "",
+         "## Ingredients",
+         "",
+         "1 muk",
+         "",
+         "## Directions",
+         "",
+         "- Fry everything",
+         "",
+         "## Notes",
+         "",
+         "Any notes go here",
+         "",
+         "## Leftovers",
+         "",
+         "- 1/2 muk",
+         ""
+      ],
+      "metaData":{
+         "tags":[
+            "tag1",
+            "tag5"
+         ],
+         "shoppingList":[
+            "item 1",
+            "item 2"
+         ],
+         "from":"https://www.google.com",
+         "serves":"1",
+         "time":"1 hr"
+      }
+   }
 ]
