@@ -1,0 +1,8 @@
+.groups .group .group-name {
+  background-color: hotpink;
+  font-weight: 600;
+}
+
+.groups .group .item {
+  background-color: thistle;
+}
