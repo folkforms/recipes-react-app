@@ -1,0 +1,44 @@
+.list {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.list-rows {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.list-row {
+  /* ALTERNATIVE TO FLEX */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: minmax(200px, 1fr) 200px 200px;
+  width: 70%;
+
+  /* display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch; */
+  /*
+  gap: 10px;
+  gap: 10px 20px;
+  */
+}
+
+.list-row-name {
+  /* display: flex;
+  flex-grow: 3; */
+  background-color: aquamarine;
+}
+
+.list-row-tags {
+  /* display: flex;
+  flex-grow: 1; */
+  background-color: burlywood;
+}
+
+.list-filter {
+  background-color: cadetblue;
+}
