@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import recipes from "./recipes";
+
+console.log(`Found ${recipes.length} recipes`);
+recipes.forEach(r => console.log(r.recipe));
 
 function App() {
   return (
@@ -15,7 +19,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Found {recipes.length} recipes
         </a>
       </header>
     </div>
