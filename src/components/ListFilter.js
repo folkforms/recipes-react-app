@@ -1,14 +1,30 @@
 import React from 'react';
 
 const ListFilter = props => {
-  const { filter, setFilter } = props;
+  const {
+    nameFilter,
+    setNameFilter,
+    ingredientsFilter,
+    setIngredientsFilter,
+    tagFilter,
+    setTagFilter,
+  } = props.filters;
   return (
     <div className="list-filter">
-      <div>Filters:</div>
-      <div>
+      <span><strong>Filter by:</strong></span>
+      <span>
+        <span>Name:</span>
+        <input type="text" value={nameFilter} onChange={event => setNameFilter(event.target.value)} />
+      </span>
+      <span>
+        <span>Ingredients:</span>
+        <input type="text" value={ingredientsFilter} onChange={event => setIngredientsFilter(event.target.value)} />
+      </span>
+      <span>
         <span>Tag:</span>
-        <input text={filter} onChange={event => setFilter(event.target.value)} />
-      </div>
+        <input type="text" value={tagFilter} onChange={event => setTagFilter(event.target.value)} />
+      </span>
+      <button type="button" onClick={props.onClear}>Clear filters</button>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+
+.list-title {
+  background-color: paleturquoise;
+}
+
+.list-filter {
+  background-color: cadetblue;
+}
+
+.list-header-row {
+  font-weight: 600;
+}
+
+.list-row {
+  display: grid;
+  grid-template-columns: minmax(75%, 1fr) 25%;
+}
+
+/* ================ FIXME Mostly trash below this point ================ */
+
+.list-row-name {
+  background-color: aquamarine;
+}
+
+.list-row-tags {
+  background-color: lightblue;
+}
+
+.list-header-row-name {
+background-color: cornflowerblue;
+}
+
+.list-header-row-tags {
+  background-color: lightcyan;
+}

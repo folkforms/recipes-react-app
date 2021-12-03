@@ -1,37 +1,73 @@
 import React, { useState } from 'react';
-import "./List.css";
+import "./List-grid.css";
+import ListTitle from './ListTitle';
+import ListHeaderRow from './ListHeaderRow';
 import ListFilter from './ListFilter';
 import ListRows from './ListRows';
 
 const List = props => {
-  const [filter, setFilter] = useState();
+  const [nameFilter, setNameFilter] = useState("");
+  const [ingredientsFilter, setIngredientsFilter] = useState("");
+  const [tagFilter, setTagFilter] = useState("");
+  const clearFilters = () => {
+    setNameFilter("");
+    setIngredientsFilter("");
+    setTagFilter("");
+  }
+  const filters = {
+    nameFilter,
+    setNameFilter,
+    ingredientsFilter,
+    setIngredientsFilter,
+    tagFilter,
+    setTagFilter,
+  };
   const allRecipes = props.recipes;
-  const recipes = applyFilter(allRecipes, filter);
+  const recipes = applyFilter(allRecipes, filters);
   return (
     <>
       <div className="list">
-        <div>Recipes ({recipes.length})</div>
-        <ListFilter recipes={recipes} filter={filter} setFilter={setFilter} />
-        {/* <ListHeaderRow recipes={recipes} /> */}
-        <ListRows recipes={recipes} filter={filter} />
+        <ListTitle numRecipes={recipes.length} />
+        <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
+        <ListHeaderRow />
+        <ListRows recipes={recipes} />
       </div>
     </>
   );
 }
 
 /**
- * Filter only the items whose `metadata.tags` include the given string
+ * Filter items based on selected filters.
  *
- * @param {object} recipes 
- * @param {string} filter 
+ * @param {object} recipes list of recipes
+ * @param {object} filters filters to use
  */
-const applyFilter = (recipes, filter) => {
-  if(!filter) { return recipes; }
-  recipes = recipes.filter(
-    recipe => recipe.metaData.tags.filter(
-      tag => tag.indexOf(filter) !== -1
-    ).length > 0
-  );
+const applyFilter = (recipes, filters) => {
+  // Filter by name
+  if(filters.nameFilter) {
+    recipes = recipes.filter(
+      recipe => recipe.name.toLowerCase().indexOf(filters.nameFilter.toLowerCase()) !== -1
+    );
+  }
+
+  // Filter by ingredients
+  if(filters.ingredientsFilter) {
+    recipes = recipes.filter(
+      recipe => recipe.ingredients.filter(
+        item => item.toLowerCase().indexOf(filters.ingredientsFilter.toLowerCase()) !== -1
+      ).length > 0
+    );
+  }
+
+  // Filter by tag
+  if(filters.tagFilter) {
+    recipes = recipes.filter(
+      recipe => recipe.metaData.tags.filter(
+        tag => tag.indexOf(filters.tagFilter) !== -1
+      ).length > 0
+    );
+  }
+
   return recipes;
 }
 
