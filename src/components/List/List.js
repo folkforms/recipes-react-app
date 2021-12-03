@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./List-grid.css";
 import ListTitle from "./ListTitle";
 import ListHeaderRow from "./ListHeaderRow";
@@ -29,15 +29,6 @@ const List = props => {
 
   // Recipe details
   const [showRecipeModal, setShowRecipeModal] = useState("");
-  useEffect(() => {
-    const close = e => {
-      if(e.key === "Escape") {
-        setShowRecipeModal("");
-      }
-    };
-    window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
-  }, []);
 
   return (
     <>
