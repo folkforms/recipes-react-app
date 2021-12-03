@@ -1,0 +1,15 @@
+{
+  "name": "@folkforms/recipes-react-app",
+  "version": "0.0.0",
+  "description": "React app for displaying recipes, shopping lists, etc.",
+  "main": "index.js",
+  "repository": "git@github.com:folkforms/recipes-react-app.git",
+  "author": "folkforms",
+  "license": "MIT",
+  "dependencies": {
+    "@folkforms/npm-release": "^0.0.24"
+  },
+  "devDependencies": {
+    "@folkforms/line-endings": "^0.0.11"
+  }
+}
