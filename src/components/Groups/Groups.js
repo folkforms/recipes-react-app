@@ -9,7 +9,7 @@ const Groups = props => {
     <>
       <div className="groups">
         <div className="title-section">
-          GROUPS TITLE
+          Groups
           {props.ToggleButton}
         </div>
         <div className="data-section">

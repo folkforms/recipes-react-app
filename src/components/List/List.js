@@ -73,7 +73,6 @@ const applyFilter = (recipes, filters) => {
     console.log("FIXME time filter not implemented yet");
   }
 
-
   // Filter by tag
   if(filters.tagFilter) {
     recipes = recipes.filter(
