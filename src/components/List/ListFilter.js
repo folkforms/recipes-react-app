@@ -6,6 +6,8 @@ const ListFilter = props => {
     setNameFilter,
     ingredientsFilter,
     setIngredientsFilter,
+    timeFilter,
+    setTimeFilter,
     tagFilter,
     setTagFilter,
   } = props.filters;
@@ -19,6 +21,10 @@ const ListFilter = props => {
       <span>
         <span>Ingredients:</span>
         <input type="text" value={ingredientsFilter} onChange={event => setIngredientsFilter(event.target.value)} />
+      </span>
+      <span>
+        <span>Time:</span>
+        <input type="text" value={timeFilter} onChange={event => setTimeFilter(event.target.value)} />
       </span>
       <span>
         <span>Tag:</span>

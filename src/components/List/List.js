@@ -9,10 +9,12 @@ const List = props => {
   // Filters
   const [nameFilter, setNameFilter] = useState("");
   const [ingredientsFilter, setIngredientsFilter] = useState("");
+  const [timeFilter, setTimeFilter] = useState("");
   const [tagFilter, setTagFilter] = useState("");
   const clearFilters = () => {
     setNameFilter("");
     setIngredientsFilter("");
+    setTimeFilter("");
     setTagFilter("");
   }
   const filters = {
@@ -20,6 +22,8 @@ const List = props => {
     setNameFilter,
     ingredientsFilter,
     setIngredientsFilter,
+    timeFilter,
+    setTimeFilter,
     tagFilter,
     setTagFilter,
   };
@@ -63,6 +67,12 @@ const applyFilter = (recipes, filters) => {
       ).length > 0
     );
   }
+
+  // Filter by time
+  if(filters.timeFilter) {
+    console.log("FIXME time filter not implemented yet");
+  }
+
 
   // Filter by tag
   if(filters.tagFilter) {
