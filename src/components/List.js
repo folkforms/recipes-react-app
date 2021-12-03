@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./List-grid.css";
-import ListTitle from './ListTitle';
-import ListHeaderRow from './ListHeaderRow';
-import ListFilter from './ListFilter';
-import ListRows from './ListRows';
+import ListTitle from "./ListTitle";
+import ListHeaderRow from "./ListHeaderRow";
+import ListFilter from "./ListFilter";
+import ListRows from "./ListRows";
+import RecipeView from "./RecipeView";
 
 const List = props => {
+  // Filters
   const [nameFilter, setNameFilter] = useState("");
   const [ingredientsFilter, setIngredientsFilter] = useState("");
   const [tagFilter, setTagFilter] = useState("");
@@ -24,13 +26,18 @@ const List = props => {
   };
   const allRecipes = props.recipes;
   const recipes = applyFilter(allRecipes, filters);
+
+  // Recipe view
+  const [showRecipeView, setShowRecipeView] = useState("");
+
   return (
     <>
+      {showRecipeView ? <RecipeView recipe={showRecipeView} onClose={() => setShowRecipeView("")} /> : null}
       <div className="list">
         <ListTitle numRecipes={recipes.length} />
         <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
         <ListHeaderRow />
-        <ListRows recipes={recipes} />
+        <ListRows recipes={recipes} onClickRecipe={setShowRecipeView} />
       </div>
     </>
   );

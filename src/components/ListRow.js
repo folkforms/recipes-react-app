@@ -3,7 +3,7 @@ import React from 'react';
 const ListRow = props => {
   return (
     <div className="list-row">
-      <div className="list-row-name">
+      <div className="list-row-name" onClick={() => props.onClickRecipe(props.recipe)}>
         {props.recipe.name}
       </div>
       <div className="list-row-tags">
