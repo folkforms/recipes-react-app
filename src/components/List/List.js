@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './List-grid.css';
+import './List.css';
 import ListTitle from './ListTitle';
 import ListHeaderRow from './ListHeaderRow';
 import ListFilter from './ListFilter';
@@ -29,7 +29,10 @@ const List = props => {
   return (
     <>
       <div className="list">
-        <ListTitle numRecipes={recipes.length} />
+        <div className="title-section">
+          <ListTitle numRecipes={recipes.length} />
+          {props.ToggleButton}
+        </div>
         <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
         <ListHeaderRow />
         <ListRows recipes={recipes} />

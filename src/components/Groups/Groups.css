@@ -1,18 +1,26 @@
-.groups {
+.groups .title-section {
+  display: flex
+}
+
+.groups .title-section .toggle-button {
+  margin-left: auto;
+}
+
+.groups .data-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.groups .group {
+.groups .data-section .group {
   width: 250px;
 }
 
-.groups .group .group-name {
+.groups .data-section .group .group-name {
   background-color: hotpink;
   font-weight: 600;
 }
 
-.groups .group .item {
+.groups .data-section .group .item {
   background-color: thistle;
 }

@@ -1,3 +1,11 @@
+.list .title-section {
+  display: flex
+}
+
+.list .title-section .toggle-button {
+  margin-left: auto;
+}
+
 .list-title {
   background-color: paleturquoise;
 }

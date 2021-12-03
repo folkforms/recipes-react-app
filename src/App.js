@@ -1,13 +1,25 @@
 import './App.css';
+import { useState } from 'react';
 import recipes from './recipes';
 import List from './components/List/List';
 import Groups from './components/Groups/Groups';
 
 function App() {
+
+  const [showList, setShowList] = useState(true);
+
+  const createToggleButton = newValue => (
+    <div className="toggle-button">
+      <button onClick={() => setShowList(newValue)}>{showList ? "Show Groups" : "Show List"}</button>
+    </div>
+  );
+
   return (
     <>
-      <List recipes={recipes} />
-      <Groups recipes={recipes} />
+      {showList
+        ? <List recipes={recipes} ToggleButton={createToggleButton(false)} />
+        : <Groups recipes={recipes} ToggleButton={createToggleButton(true)} />
+      }
     </>
   );
 }

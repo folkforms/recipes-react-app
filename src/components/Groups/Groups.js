@@ -8,16 +8,22 @@ const Groups = props => {
   return (
     <>
       <div className="groups">
-        {Object.keys(tags).map(key => (
-          <>
-            <div className="group">
-              <div className="group-name">{key}</div>
-              {tags[key].map(recipe => (
-                <GroupItem recipe={recipe}/>
-              ))}
-            </div>
-          </>
-        ))}
+        <div className="title-section">
+          GROUPS TITLE
+          {props.ToggleButton}
+        </div>
+        <div className="data-section">
+          {Object.keys(tags).map(key => (
+            <>
+              <div className="group">
+                <div className="group-name">{key}</div>
+                {tags[key].map(recipe => (
+                  <GroupItem recipe={recipe}/>
+                ))}
+              </div>
+            </>
+          ))}
+        </div>
       </div>
     </>
   );
