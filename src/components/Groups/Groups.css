@@ -1,3 +1,13 @@
+.groups {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.groups .group {
+  width: 250px;
+}
+
 .groups .group .group-name {
   background-color: hotpink;
   font-weight: 600;
