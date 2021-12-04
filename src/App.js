@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import recipes from './recipes';
+import recipes from './recipes-full';
 import List from './components/List/List';
 import Groups from './components/Groups/Groups';
 
