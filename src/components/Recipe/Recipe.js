@@ -19,7 +19,7 @@ const Recipe = props => {
     <>
       <div className="modal" key={"modal-" + recipe.filename}>
         <div className="modal-content">
-          <RecipeHeader name={recipe.name} onClose={props.onClose} />
+          <RecipeHeader name={recipe.name} onClose={() => props.onClose("")} />
           <RecipeBody recipe={recipe} />
         </div>
       </div>
