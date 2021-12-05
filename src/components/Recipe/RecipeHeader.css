@@ -3,10 +3,24 @@
 }
 
 .recipe-header .title {
-  background-color: rosybrown;
+  font-weight: 900;
+  font-size: 28px;
 }
 
-.recipe-header .close-button {
-  background-color: royalblue;
+.recipe-header .modal-close-button {
   margin-left: auto;
+}
+
+.modal-close-button button {
+  background-color: var(--modal-close-button-bg);
+  color: var(--modal-close-button-text);
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 30%;
+  border-style: none;
+}
+
+.modal-close-button button:hover,
+.modal-close-button button:focus {
+  color: var(--color-3);
 }

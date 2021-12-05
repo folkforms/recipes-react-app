@@ -1,5 +1,6 @@
 .list .title-section {
-  display: flex
+  display: flex;
+  background-color: var(--title-bg);
 }
 
 .list .title-section .toggle-button {
@@ -7,36 +8,54 @@
 }
 
 .list-title {
-  background-color: paleturquoise;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 4px;
+  color: var(--title-text);
 }
 
-.list-filter {
-  background-color: cadetblue;
+.list-filters {
+  background-color: var(--filters-bg);
+  color: var(--filters-text);
+  font-weight: 300;
+  font-size: 12px;
 }
 
-.list-header-row {
-  font-weight: 600;
+.list-filters .description {
+  font-weight: 1000;
+  padding: 4px;
 }
 
-.list-row {
+.list-filters .name {
+  padding: 4px;
+}
+
+.list-filters .input {
+  margin: 4px;
+  width: 100px;
+}
+
+.list-filters .input.ingredients {
+  width: 300px;
+}
+
+.grid {
   display: grid;
   grid-template-columns: minmax(75%, 1fr) 25%;
 }
 
-/* ================ FIXME Mostly trash below this point ================ */
-
-.list-row-name {
-  background-color: aquamarine;
+.list-headers {
+  background-color: var(--list-header-bg);
+  color: var(--list-header-text);
+  font-weight: 800;
 }
 
-.list-row-tags {
-  background-color: lightblue;
+.list-header {
+  padding: 4px;
 }
 
-.list-header-row-name {
-background-color: cornflowerblue;
-}
-
-.list-header-row-tags {
-  background-color: lightcyan;
+.list-row {
+  background-color: var(--list-row-bg);
+  color: var(--list-row-text);
+  padding: 2px 4px;
 }

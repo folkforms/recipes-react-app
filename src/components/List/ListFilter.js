@@ -12,25 +12,25 @@ const ListFilter = props => {
     setTagFilter,
   } = props.filters;
   return (
-    <div className="list-filter">
-      <span><strong>Filter by:</strong></span>
+    <div className="list-filters">
+      <span className="description"><strong>FILTER BY</strong></span>
       <span>
-        <span>Name:</span>
-        <input type="text" value={nameFilter} onChange={event => setNameFilter(event.target.value)} />
+        <span className="name">Name:</span>
+        <input className="input" type="text" value={nameFilter} onChange={event => setNameFilter(event.target.value)} />
       </span>
       <span>
-        <span>Ingredients:</span>
-        <input type="text" value={ingredientsFilter} onChange={event => setIngredientsFilter(event.target.value)} />
+        <span className="name">Ingredients:</span>
+        <input className="input ingredients" type="text" value={ingredientsFilter} onChange={event => setIngredientsFilter(event.target.value)} />
       </span>
       <span>
-        <span>Time:</span>
-        <input type="text" value={timeFilter} onChange={event => setTimeFilter(event.target.value)} />
+        <span className="name">Time:</span>
+        <input className="input" type="text" value={timeFilter} onChange={event => setTimeFilter(event.target.value)} />
       </span>
       <span>
-        <span>Tag:</span>
-        <input type="text" value={tagFilter} onChange={event => setTagFilter(event.target.value)} />
+        <span className="name">Tag:</span>
+        <input className="input" type="text" value={tagFilter} onChange={event => setTagFilter(event.target.value)} />
       </span>
-      <button type="button" onClick={props.onClear}>Clear filters</button>
+      <button className="button" type="button" onClick={props.onClear}>Clear filters</button>
     </div>
   );
 }

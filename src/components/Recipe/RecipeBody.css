@@ -1,9 +1,9 @@
 .recipe-body {
-  background-color: teal;
+  xbackground-color: teal;
 }
 
 .recipe-body .section {
-  background-color: seagreen;
+  xbackground-color: seagreen;
   font-weight: 600;
 }
 

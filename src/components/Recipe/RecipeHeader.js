@@ -7,8 +7,8 @@ const RecipeHeader = props => {
     <>
       <div className="recipe-header">
         <div className="title">{name}</div>
-        <div className="close-button">
-          <button onClick={onClose}>Close</button>
+        <div className="modal-close-button">
+          <button onClick={onClose}>&times;</button>
         </div>
       </div>
     </>

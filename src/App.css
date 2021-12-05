@@ -1,3 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+  --main-font: Poppins;
+
+  --color-b1: #fbf5ef;
+  --color-b2: #f2d3ab;
+  --color-b3: #c69fa5;
+  --color-b4: #8b6d9c;
+  --color-b5: #494d7e;
+  --color-b6: #272744;
+
+  --page-bg: var(--color-b6);
+  --title-bg: var(--color-b3);
+  --title-text: var(--color-b6);
+  --filters-bg: var(--color-b4);
+  --filters-text: var(--color-b2);
+  --button-bg: var(--color-b5);
+  --button-text: var(--color-b1);
+  --button-border: var(--color-b6);
+  --list-header-bg: var(--color-b5);
+  --list-header-text: var(--color-b2);
+  --list-row-bg: var(--color-b6);
+  --modal-bg: var(--color-b1);
+  --modal-text: var(--color-b6);
+  --modal-border: var(--color-b5);
+  --modal-close-button-bg: var(--color-b4);
+  --modal-close-button-text: var(--color-b1);
+  --text: var(--color-b1);
+  --text-highlight: var(--color-b3);
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--text);
+  background-color: var(--page-bg);
+}
+
+.button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 8%;
+  border: 2px solid var(--button-border);
+}
+
+.toggle-button {
+  margin: 6px;
+}
+
 .App {
   text-align: center;
 }

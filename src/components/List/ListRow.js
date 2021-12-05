@@ -6,11 +6,11 @@ const ListRow = props => {
 
   return (
     <>
-      <div className="list-row">
-        <div className="list-row-name" onClick={setShowModal}>
+      <div className="grid">
+        <div className="list-row" onClick={setShowModal}>
           {props.recipe.name}
         </div>
-        <div className="list-row-tags">
+        <div className="list-row">
           {props.recipe.metaData.tags.join(", ")}
         </div>
       </div>
