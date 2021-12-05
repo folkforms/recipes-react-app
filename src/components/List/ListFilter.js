@@ -12,8 +12,8 @@ const ListFilter = props => {
     setTagFilter,
   } = props.filters;
   return (
-    <div className="list-filters">
-      <span className="description"><strong>FILTER BY</strong></span>
+    <div className="filters">
+      <span className="description">FILTER BY</span>
       <span>
         <span className="name">Name:</span>
         <input className="input" type="text" value={nameFilter} onChange={event => setNameFilter(event.target.value)} />

@@ -1,5 +1,7 @@
 .groups .title-section {
-  display: flex
+  display: flex;
+  margin: 8px;
+  background-color: red;
 }
 
 .groups .title-section .toggle-button {
@@ -10,17 +12,23 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: goldenrod;
 }
 
 .groups .data-section .group {
   width: 250px;
+  background-color: hotpink;
+  margin: 8px;
 }
 
-.groups .data-section .group .group-name {
+.groups .data-section .group .name {
   background-color: hotpink;
   font-weight: 600;
+  padding: 2px 4px;
+  background-color: green;
 }
 
 .groups .data-section .group .item {
-  background-color: thistle;
+  padding: 2px 4px;
+  background-color: purple;
 }

@@ -38,8 +38,10 @@ const List = props => {
           {props.ToggleButton}
         </div>
         <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
-        <ListHeaderRow />
-        <ListRows recipes={recipes} />
+        <div className="list-data">
+          <ListHeaderRow />
+          <ListRows recipes={recipes} />
+        </div>
       </div>
     </>
   );

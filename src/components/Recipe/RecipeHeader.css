@@ -22,5 +22,5 @@
 
 .modal-close-button button:hover,
 .modal-close-button button:focus {
-  color: var(--color-3);
+  background-color: var(--modal-close-button-hover-bg);
 }

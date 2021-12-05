@@ -1,42 +1,48 @@
 .list .title-section {
   display: flex;
   background-color: var(--title-bg);
+  margin: 8px;
 }
 
 .list .title-section .toggle-button {
   margin-left: auto;
 }
 
-.list-title {
+.title {
   font-weight: 900;
   font-size: 20px;
   padding: 4px;
   color: var(--title-text);
 }
 
-.list-filters {
+.filters {
   background-color: var(--filters-bg);
   color: var(--filters-text);
   font-weight: 300;
   font-size: 12px;
+  margin: 8px;
 }
 
-.list-filters .description {
-  font-weight: 1000;
+.filters .description {
+  font-weight: 700;
   padding: 4px;
 }
 
-.list-filters .name {
+.filters .name {
   padding: 4px;
 }
 
-.list-filters .input {
+.filters .input {
   margin: 4px;
   width: 100px;
 }
 
-.list-filters .input.ingredients {
+.filters .input.ingredients {
   width: 300px;
+}
+
+.list-data {
+  margin: 8px;
 }
 
 .grid {
@@ -44,13 +50,13 @@
   grid-template-columns: minmax(75%, 1fr) 25%;
 }
 
-.list-headers {
+.headers {
   background-color: var(--list-header-bg);
   color: var(--list-header-text);
   font-weight: 800;
 }
 
-.list-header {
+.header {
   padding: 4px;
 }
 

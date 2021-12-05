@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListTitle = props => {
   return (
-    <div className="list-title">Recipes ({props.numRecipes})</div>
+    <div className="title">Recipes ({props.numRecipes})</div>
   );
 }
 

@@ -9,14 +9,14 @@ const Groups = props => {
     <>
       <div className="groups">
         <div className="title-section">
-          Groups
+          <span className="title">Groups</span>
           {props.ToggleButton}
         </div>
         <div className="data-section">
           {Object.keys(tags).map(key => (
             <>
               <div className="group">
-                <div className="group-name">{key}</div>
+                <div className="name">{key}</div>
                 {tags[key].map(recipe => (
                   <GroupItem recipe={recipe}/>
                 ))}
