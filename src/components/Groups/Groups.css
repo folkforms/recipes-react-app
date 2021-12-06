@@ -1,34 +1,42 @@
 .groups .title-section {
   display: flex;
+  background-color: var(--title-bg);
   margin: 8px;
-  background-color: red;
 }
 
 .groups .title-section .toggle-button {
   margin-left: auto;
 }
 
+.groups .title-section .title {
+  font-weight: 900;
+  font-size: 20px;
+  padding: 4px;
+  color: var(--title-text);
+}
+
 .groups .data-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: goldenrod;
+  background-color: var(--page-bg);
 }
 
 .groups .data-section .group {
   width: 250px;
-  background-color: hotpink;
-  margin: 8px;
+  background-color: var(--page-bg);
+  margin: 0px 8px 8px 8px;
 }
 
-.groups .data-section .group .name {
-  background-color: hotpink;
+.groups .data-section .group > .name {
   font-weight: 600;
   padding: 2px 4px;
-  background-color: green;
+  background-color: var(--group-name-bg);
+  color: var(--text);
 }
 
-.groups .data-section .group .item {
+.groups .data-section .group > .item {
   padding: 2px 4px;
-  background-color: purple;
+  background-color: var(--group-item-bg);
+  color: var(--text);
 }

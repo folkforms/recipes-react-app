@@ -4,32 +4,44 @@
 :root {
   --main-font: Poppins;
 
+/* 
   --color-1: #fbf5ef;
   --color-2: #f2d3ab;
   --color-3: #c69fa5;
   --color-4: #8b6d9c;
   --color-5: #494d7e;
   --color-6: #272744;
+*/
+
+  --color-0: #fbf5ef;
+  --color-1: #fd724e;
+  --color-2: #a02f40;
+  --color-3: #5f2f45;
+  --color-4: #382d43;
+  --color-5: #261b2e;
+  --color-6: #201727;
 
   --page-bg: var(--color-6);
-  --title-bg: var(--color-3);
-  --title-text: var(--color-6);
-  --filters-bg: var(--color-4);
-  --filters-text: var(--color-2);
+  --title-bg: var(--color-2);
+  --title-text: var(--color-0);
+  --filters-bg: var(--color-3);
+  --filters-text: var(--color-0);
   --button-bg: var(--color-5);
-  --button-text: var(--color-1);
-  --button-border: var(--color-6);
-  --list-header-bg: var(--color-5);
-  --list-header-text: var(--color-2);
+  --button-text: var(--color-0);
+  --button-border: var(--color-4);
+  --list-header-bg: var(--color-4);
+  --list-header-text: var(--color-0);
   --list-row-bg: var(--color-6);
-  --modal-bg: var(--color-1);
-  --modal-text: var(--color-6);
-  --modal-border: var(--color-5);
+  --modal-bg: var(--color-0);
+  --modal-text: var(--color-5);
+  --modal-border: var(--color-4);
   --modal-close-button-bg: var(--color-4);
-  --modal-close-button-text: var(--color-1);
-  --modal-close-button-hover-bg: var(--color-5);
-  --text: var(--color-1);
-  --text-highlight: var(--color-3);
+  --modal-close-button-text: var(--color-0);
+  --modal-close-button-hover-bg: var(--color-3);
+  --group-name-bg: var(--color-3);
+  --group-item-bg: var(--color-4);
+  --text: var(--color-0);
+  --text-highlight: var(--color-1);
 }
 
 body {

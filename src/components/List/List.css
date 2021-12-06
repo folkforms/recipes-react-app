@@ -8,14 +8,14 @@
   margin-left: auto;
 }
 
-.title {
+.list .title-section .title {
   font-weight: 900;
   font-size: 20px;
   padding: 4px;
   color: var(--title-text);
 }
 
-.filters {
+.list .filters {
   background-color: var(--filters-bg);
   color: var(--filters-text);
   font-weight: 300;
@@ -23,21 +23,21 @@
   margin: 8px;
 }
 
-.filters .description {
+.list .filters .description {
   font-weight: 700;
   padding: 4px;
 }
 
-.filters .name {
+.list .filters .name {
   padding: 4px;
 }
 
-.filters .input {
+.list .filters .input {
   margin: 4px;
   width: 100px;
 }
 
-.filters .input.ingredients {
+.list .filters .input.ingredients {
   width: 300px;
 }
 
