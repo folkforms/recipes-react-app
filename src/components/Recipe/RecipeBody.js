@@ -1,5 +1,4 @@
 import React from 'react';
-import './RecipeBody.css';
 
 const RecipeBody = props => {
   const { recipe } = props;
@@ -8,7 +7,7 @@ const RecipeBody = props => {
     <>
       <div className="recipe-body">
         <div className="section">Shopping list</div>
-        <div>
+        <div className="item">
           {recipe.metaData.shoppingList.join(", ")}
         </div>
         <div className="section">Ingredients</div>

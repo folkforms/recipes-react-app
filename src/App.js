@@ -15,12 +15,12 @@ function App() {
   );
 
   return (
-    <>
+    <div className="app">
       {showList
         ? <List recipes={recipes} ToggleButton={createToggleButton(false)} />
         : <Groups recipes={recipes} ToggleButton={createToggleButton(true)} />
       }
-    </>
+    </div>
   );
 }
 

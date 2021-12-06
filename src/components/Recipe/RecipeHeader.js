@@ -1,5 +1,4 @@
 import React from 'react';
-import './RecipeHeader.css';
 
 const RecipeHeader = props => {
   const { name, onClose } = props;

@@ -1,3 +1,22 @@
+.recipe-body .section {
+  font-weight: 600;
+  padding-top: 16px;
+}
+
+.recipe-header {
+  display: flex;
+}
+
+.recipe-header .title {
+  color: var(--modal-text);
+  font-weight: 900;
+  font-size: 28px;
+}
+
+.recipe-header .modal-close-button {
+  margin-left: auto;
+}
+
 .modal {
   position: fixed;
   z-index: 1;
@@ -13,9 +32,23 @@
 .modal-content {
   background-color: var(--modal-bg);
   color: var(--modal-text);
-  margin: 8% auto; /* 8% is distance from the top. FIXME Adjust this as required*/
+  margin: 2% auto; /* 8% is distance from the top. FIXME Adjust this as required*/
   padding: 20px;
   border: 4px solid var(--modal-border);
-  border-radius: 3%;
+  border-radius: 20px;
   width: 80%;
+}
+
+.modal-close-button button {
+  background-color: var(--modal-close-button-bg);
+  color: var(--modal-close-button-text);
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 30%;
+  border-style: none;
+}
+
+.modal-close-button button:hover,
+.modal-close-button button:focus {
+  background-color: var(--modal-close-button-hover-bg);
 }

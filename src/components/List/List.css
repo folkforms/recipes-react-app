@@ -35,6 +35,8 @@
 .list .filters .input {
   margin: 4px;
   width: 100px;
+  border-radius: 3px;
+  font-family: inherit;
 }
 
 .list .filters .input.ingredients {
