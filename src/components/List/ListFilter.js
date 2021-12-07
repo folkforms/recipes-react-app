@@ -10,6 +10,8 @@ const ListFilter = props => {
     setTimeFilter,
     tagFilter,
     setTagFilter,
+    showUntaggedFilter,
+    setShowUntaggedFilter,
   } = props.filters;
   return (
     <div className="filters">
@@ -29,6 +31,10 @@ const ListFilter = props => {
       <span>
         <span className="name">Tag:</span>
         <input className="input" type="text" value={tagFilter} onChange={event => setTagFilter(event.target.value)} />
+      </span>
+      <span>
+        <span className="name">Show untagged:</span>
+        <input className="input checkbox" type="checkbox" checked={showUntaggedFilter} onChange={event => setShowUntaggedFilter(event.target.checked)} />
       </span>
       <button className="button" type="button" onClick={props.onClear}>Clear filters</button>
     </div>

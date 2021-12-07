@@ -43,6 +43,15 @@
   width: 200px;
 }
 
+.list .filters .input.checkbox {
+  margin: 4px;
+  border-radius: 3px;
+  font-family: inherit;
+	width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
 .list-data {
   margin: 8px;
 }

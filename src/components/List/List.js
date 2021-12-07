@@ -11,11 +11,13 @@ const List = props => {
   const [ingredientsFilter, setIngredientsFilter] = useState("");
   const [timeFilter, setTimeFilter] = useState("");
   const [tagFilter, setTagFilter] = useState("");
+  const [showUntaggedFilter, setShowUntaggedFilter] = useState(false);
   const clearFilters = () => {
     setNameFilter("");
     setIngredientsFilter("");
     setTimeFilter("");
     setTagFilter("");
+    setShowUntaggedFilter(false);
   }
   const filters = {
     nameFilter,
@@ -26,6 +28,8 @@ const List = props => {
     setTimeFilter,
     tagFilter,
     setTagFilter,
+    showUntaggedFilter,
+    setShowUntaggedFilter,
   };
   const allRecipes = props.recipes;
   const recipes = applyFilter(allRecipes, filters);
@@ -81,6 +85,13 @@ const applyFilter = (recipes, filters) => {
       recipe => recipe.metaData.tags.filter(
         tag => tag.indexOf(filters.tagFilter) !== -1
       ).length > 0
+    );
+  }
+
+  // Filter by show untagged
+  if(filters.showUntaggedFilter === false) {
+    recipes = recipes.filter(
+      recipe => recipe.metaData.tags.length > 0 && recipe.metaData.tags[0] !== "Untagged"
     );
   }
 
