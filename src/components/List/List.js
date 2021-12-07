@@ -83,7 +83,7 @@ const applyFilter = (recipes, filters) => {
   if(filters.tagFilter) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags.filter(
-        tag => tag.indexOf(filters.tagFilter) !== -1
+        tag => tag.toLowerCase().indexOf(filters.tagFilter.toLowerCase()) !== -1
       ).length > 0
     );
   }
