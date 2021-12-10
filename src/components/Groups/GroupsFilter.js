@@ -1,18 +1,10 @@
 import React from 'react';
 
 const GroupsFilter = props => {
-  // const {
-  //   nameFilter,
-  //   setNameFilter,
-  //   ingredientsFilter,
-  //   setIngredientsFilter,
-  //   timeFilter,
-  //   setTimeFilter,
-  //   tagFilter,
-  //   setTagFilter,
-  //   showUntaggedFilter,
-  //   setShowUntaggedFilter,
-  // } = props.filters;
+  const {
+    showUntaggedFilter,
+    setShowUntaggedFilter,
+  } = props.filters;
   return (
     <div className="filters">
       <span className="description">FILTER BY</span>
@@ -31,11 +23,11 @@ const GroupsFilter = props => {
       <span>
         <span className="name">Tag:</span>
         <input className="input" type="text" value={tagFilter} onChange={event => setTagFilter(event.target.value)} />
-      </span>
+      </span> */}
       <span>
         <span className="name">Show untagged:</span>
         <input className="input checkbox" type="checkbox" checked={showUntaggedFilter} onChange={event => setShowUntaggedFilter(event.target.checked)} />
-      </span> */}
+      </span>
       <button className="button" type="button" onClick={props.onClear}>Clear filters</button>
     </div>
   );

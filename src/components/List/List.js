@@ -41,7 +41,7 @@ const List = props => {
           <ListTitle numRecipes={recipes.length} />
           {props.ToggleButton}
         </div>
-        <ListFilter recipes={recipes} filters={filters} onClear={clearFilters}/>
+        <ListFilter filters={filters} onClear={clearFilters}/>
         <div className="list-data">
           <ListHeaderRow />
           <ListRows recipes={recipes} />
