@@ -1,5 +1,6 @@
 import React from 'react';
 import './Groups.css';
+import GroupsFilter from './GroupsFilter';
 import GroupItem from './GroupItem';
 
 const Groups = props => {
@@ -12,6 +13,7 @@ const Groups = props => {
           <span className="title">Groups</span>
           {props.ToggleButton}
         </div>
+        <GroupsFilter />
         <div className="data-section">
           {Object.keys(tags).map(key => (
             <>

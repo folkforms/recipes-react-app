@@ -15,43 +15,6 @@
   color: var(--title-text);
 }
 
-.list .filters {
-  background-color: var(--filters-bg);
-  color: var(--filters-text);
-  font-weight: 300;
-  font-size: 12px;
-  margin: 8px;
-}
-
-.list .filters .description {
-  font-weight: 700;
-  padding: 4px;
-}
-
-.list .filters .name {
-  padding: 4px;
-}
-
-.list .filters .input {
-  margin: 4px;
-  width: 100px;
-  border-radius: 3px;
-  font-family: inherit;
-}
-
-.list .filters .input.ingredients {
-  width: 200px;
-}
-
-.list .filters .input.checkbox {
-  margin: 4px;
-  border-radius: 3px;
-  font-family: inherit;
-	width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
-
 .list-data {
   margin: 8px;
 }
