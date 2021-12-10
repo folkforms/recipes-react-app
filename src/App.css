@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
 
-@import 'filters.css';
+@import './components/Filter/Filter.css';
 
 :root {
   --main-font: Poppins;

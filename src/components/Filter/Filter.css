@@ -22,11 +22,11 @@
   font-family: inherit;
 }
 
-.filters .input.ingredients {
+.filters .ingredients .input {
   width: 200px;
 }
 
-.filters .input.checkbox {
+.filters .checkbox .input {
   margin: 4px;
   border-radius: 3px;
   font-family: inherit;

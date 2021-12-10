@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './List.css';
 import ListTitle from './ListTitle';
 import ListHeaderRow from './ListHeaderRow';
-import ListFilter from './ListFilter';
+import ListFilters from './ListFilters';
 import ListRows from './ListRows';
 
 const List = props => {
@@ -41,7 +41,7 @@ const List = props => {
           <ListTitle numRecipes={recipes.length} />
           {props.ToggleButton}
         </div>
-        <ListFilter filters={filters} onClear={clearFilters}/>
+        <ListFilters filters={filters} onClear={clearFilters}/>
         <div className="list-data">
           <ListHeaderRow />
           <ListRows recipes={recipes} />
