@@ -9,14 +9,14 @@ const Filter = props => {
     className,
   } = props;
 
+  const specificOnChange = getOnChange(type, onChange);
+
   return (
-    <span className={className}>
+    <span className={`${type} ${className}`}>
       <span className="name">{label}</span>
-      {
-        type === "text"
-          ? <input className="input" type={type} value={value} onChange={getOnChange(type, onChange)} />
-          : <input className="input" type={type} checked={value} onChange={getOnChange(type, onChange)} />
-      }
+      {type === "text"
+        ? <input className="input" type={type} value={value} onChange={specificOnChange} />
+        : <input className="input" type={type} checked={value} onChange={specificOnChange} />}
     </span>
   );
 }
