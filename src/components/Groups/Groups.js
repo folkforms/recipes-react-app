@@ -25,14 +25,12 @@ const Groups = props => {
         <GroupsFilter filters={filters} onClear={clearFilters} />
         <div className="data-section">
           {Object.keys(tags).map(key => (
-            <>
-              <div className="group">
-                <div className="name">{key}</div>
-                {tags[key].map(recipe => (
-                  <GroupItem recipe={recipe}/>
-                ))}
-              </div>
-            </>
+            <div className="group" key={key}>
+              <div className="name">{key}</div>
+              {tags[key].map(recipe => (
+                <GroupItem recipe={recipe} key={key + "-" + recipe.name} />
+              ))}
+            </div>
           ))}
         </div>
       </div>
