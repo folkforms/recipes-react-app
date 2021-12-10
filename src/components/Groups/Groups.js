@@ -12,7 +12,7 @@ const Groups = props => {
     showUntaggedFilter,
     setShowUntaggedFilter,
   };
-  const allRecipes = props.recipes;
+  const allRecipes = props.recipes.sort((a,b) => (a.name > b.name) ? 1 : -1);
   const recipes = applyFilter(allRecipes, filters);
   const tags = orderByTags(recipes);
   return (
