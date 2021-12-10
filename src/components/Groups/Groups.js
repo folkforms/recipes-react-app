@@ -38,7 +38,30 @@ const orderByTags = recipes => {
       }
       tags[tag].push(recipe);
     });
+  });
+  return splitUntaggedRecipes(tags);
+}
+
+/**
+ * Split untagged recipes into groups of 10.
+ * @param {*} tags recipes ordered by tag
+ */
+const splitUntaggedRecipes = tags => {
+  const numUntaggedGroups = Math.ceil(tags["Untagged"].length / 10);
+  for(let i = 0; i < numUntaggedGroups; i++) {
+    tags[`Untagged-${i}`] = [];
+  }
+  let count = 0;
+  let index = 0;
+  tags["Untagged"].forEach(recipe => {
+    tags[`Untagged-${index}`].push(recipe);
+    count++;
+    if(count === 10) {
+      count = 0;
+      index++;
+    }
   })
+  delete tags["Untagged"];
   return tags;
 }
 
