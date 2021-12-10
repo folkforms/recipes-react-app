@@ -13,6 +13,8 @@ const ListFilters = props => {
     setTagFilter,
     showUntaggedFilter,
     setShowUntaggedFilter,
+    missingShoppingListOnlyFilter,
+    setMissingShoppingListOnlyFilter,
   } = props.filters;
   return (
     <div className="filters">
@@ -22,6 +24,7 @@ const ListFilters = props => {
       <Filter label="Time:" type="text" value={timeFilter} onChange={setTimeFilter} />
       <Filter label="Tag:" type="text" value={tagFilter} onChange={setTagFilter} />
       <Filter label="Show untagged:" type="checkbox" value={showUntaggedFilter} onChange={setShowUntaggedFilter} className="checkbox" />
+      <Filter label="No shopping list:" type="checkbox" value={missingShoppingListOnlyFilter} onChange={setMissingShoppingListOnlyFilter} className="checkbox" />
       <button className="button" type="button" onClick={props.onClear}>Clear filters</button>
     </div>
   );
