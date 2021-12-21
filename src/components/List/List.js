@@ -102,7 +102,11 @@ const applyFilter = (recipes, filters) => {
   // Filter by missing shopping list
   if(filters.missingShoppingListOnlyFilter) {
     recipes = recipes.filter(
-      recipe => recipe.metaData.tags.length > 0 && recipe.metaData.shoppingList.length === 1 && recipe.metaData.shoppingList[0] === "???"
+      recipe => recipe.metaData.tags &&
+                recipe.metaData.tags.length > 0 &&
+                recipe.metaData.shoppingList &&
+                recipe.metaData.shoppingList.length === 1 &&
+                recipe.metaData.shoppingList[0] === "???"
     );
   }
 
