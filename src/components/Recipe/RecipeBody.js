@@ -8,7 +8,7 @@ const RecipeBody = props => {
       <div className="recipe-body">
         <div className="section">Shopping list</div>
         <div className="item">
-          {recipe.metaData.shoppingList.join(", ")}
+          {recipe.metaData.shoppingList.join(" / ")}
         </div>
         <div className="section">Ingredients</div>
         {recipe.ingredients.map(item => <div className="item" key={"ingredient-" + count++}>{item}</div>)}
