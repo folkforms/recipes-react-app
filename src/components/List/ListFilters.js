@@ -23,8 +23,8 @@ const ListFilters = props => {
       <Filter label="Ingredients:" type="text" value={ingredientsFilter} onChange={setIngredientsFilter} className="ingredients" />
       <Filter label="Time:" type="text" value={timeFilter} onChange={setTimeFilter} />
       <Filter label="Tag:" type="text" value={tagFilter} onChange={setTagFilter} />
-      <Filter label="Show untagged:" type="checkbox" value={showUntaggedFilter} onChange={setShowUntaggedFilter} />
-      <Filter label="No shopping list:" type="checkbox" value={missingShoppingListOnlyFilter} onChange={setMissingShoppingListOnlyFilter} />
+      <Filter label="Include untagged" type="checkbox" value={showUntaggedFilter} onChange={setShowUntaggedFilter} />
+      <Filter label="Show no shopping list only" type="checkbox" value={missingShoppingListOnlyFilter} onChange={setMissingShoppingListOnlyFilter} />
       <button className="button" type="button" onClick={props.onClear}>Clear filters</button>
     </div>
   );

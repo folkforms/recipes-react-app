@@ -13,10 +13,16 @@ const Filter = props => {
 
   return (
     <span className={`${type} ${className}`}>
-      <span className="name">{label}</span>
       {type === "text"
-        ? <input className="input" type={type} value={value} onChange={specificOnChange} />
-        : <input className="input" type={type} checked={value} onChange={specificOnChange} />}
+        ? <>
+            <span className="name">{label}</span>
+            <input className="input" type={type} value={value} onChange={specificOnChange} />
+          </>
+        : <>
+            <input className="input" type={type} checked={value} onChange={specificOnChange} />
+            <span className="name">{label}</span>
+          </>
+      }
     </span>
   );
 }
