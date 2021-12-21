@@ -53,8 +53,7 @@ body {
   border: 2px solid var(--button-border);
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: var(--button-hover-bg);
 }
 
