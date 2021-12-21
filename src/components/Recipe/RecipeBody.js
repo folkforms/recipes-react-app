@@ -11,18 +11,16 @@ const RecipeBody = props => {
           {recipe.metaData.shoppingList.join(", ")}
         </div>
         <div className="section">Ingredients</div>
-        {recipe.ingredients.map(item => <div className="item" key={"ingredient-" + count++}>{bullet()} {item}</div>)}
+        {recipe.ingredients.map(item => <div className="item" key={"ingredient-" + count++}>{item}</div>)}
         <div className="section">Directions</div>
-        {recipe.directions.map(item => <div className="item" key={"ingredient-" + count++}>{bullet()} {item}</div>)}
+        {recipe.directions.map(item => <div className="item" key={"ingredient-" + count++}>{item}</div>)}
         <div className="section">Notes</div>
-        {recipe.notes.map(item => <div className="item" key={"ingredient-" + count++}>{bullet()} {item}</div>)}
+        {recipe.notes.map(item => <div className="item" key={"ingredient-" + count++}>{item}</div>)}
         <div className="section">Misc</div>
         <div className="item" key={"misc-" + count++}>File: {recipe.filename}</div>
       </div>
     </>
   );
 }
-
-const bullet = () => "-";
 
 export default RecipeBody;
