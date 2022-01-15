@@ -11,15 +11,15 @@ const List = props => {
   const [ingredientsFilter, setIngredientsFilter] = useState("");
   const [timeFilter, setTimeFilter] = useState("");
   const [tagFilter, setTagFilter] = useState("");
-  const [showUntaggedFilter, setShowUntaggedFilter] = useState(false);
-  const [missingShoppingListOnlyFilter, setMissingShoppingListOnlyFilter] = useState(false);
+  const [showUntaggedFilter, setShowUntaggedFilter] = useState(true);
+  const [missingShoppingListFilter, setMissingShoppingListFilter] = useState(false);
   const clearFilters = () => {
     setNameFilter("");
     setIngredientsFilter("");
     setTimeFilter("");
     setTagFilter("");
-    setShowUntaggedFilter(false);
-    setMissingShoppingListOnlyFilter(false);
+    setShowUntaggedFilter(true);
+    setMissingShoppingListFilter(false);
   }
   const filters = {
     nameFilter,
@@ -32,8 +32,8 @@ const List = props => {
     setTagFilter,
     showUntaggedFilter,
     setShowUntaggedFilter,
-    missingShoppingListOnlyFilter,
-    setMissingShoppingListOnlyFilter,
+    missingShoppingListFilter,
+    setMissingShoppingListFilter,
   };
   const allRecipes = props.recipes.sort((a,b) => (a.name > b.name) ? 1 : -1);
   const recipes = applyFilter(allRecipes, filters);
@@ -100,7 +100,7 @@ const applyFilter = (recipes, filters) => {
   }
 
   // Filter by missing shopping list
-  if(filters.missingShoppingListOnlyFilter) {
+  if(filters.missingShoppingListFilter) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags &&
                 recipe.metaData.tags.length > 0 &&
