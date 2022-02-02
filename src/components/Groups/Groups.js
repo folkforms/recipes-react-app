@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Groups.css';
+import reorderTags from './reorderTags';
 import GroupsFilter from './GroupsFilter';
 import GroupItem from './GroupItem';
 
@@ -39,7 +40,7 @@ const Groups = props => {
 }
 
 const orderByTags = recipes => {
-  const tags = {};
+  let tags = {};
   recipes.forEach(recipe => {
     recipe.metaData.tags.forEach(tag => {
       if(!tags[tag]) {
@@ -48,6 +49,7 @@ const orderByTags = recipes => {
       tags[tag].push(recipe);
     });
   });
+  tags = reorderTags(tags);
   return splitUntaggedRecipes(tags);
 }
 
