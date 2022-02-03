@@ -62,28 +62,44 @@ const List = props => {
  * @param {object} filters filters to use
  */
 const applyFilter = (recipes, filters) => {
-  // Filter by name
   if(filters.nameFilter) {
-    recipes = recipes.filter(
-      recipe => recipe.name.toLowerCase().indexOf(filters.nameFilter.toLowerCase()) !== -1
-    );
+    const tokens = filters.nameFilter.split(/\s+/).map(t => t.toLowerCase());
+    tokens.forEach(token => {
+      if(token.startsWith("-")) {
+        recipes = recipes.filter(
+          recipe => recipe.name.toLowerCase().indexOf(token.substring(1)) === -1
+        );
+      } else {
+        recipes = recipes.filter(
+          recipe => recipe.name.toLowerCase().indexOf(token) !== -1
+        );
+      }
+    });
   }
 
-  // Filter by ingredients
   if(filters.ingredientsFilter) {
-    recipes = recipes.filter(
-      recipe => recipe.ingredients.filter(
-        item => item.toLowerCase().indexOf(filters.ingredientsFilter.toLowerCase()) !== -1
-      ).length > 0
-    );
+    const tokens = filters.ingredientsFilter.split(/\s+/).map(t => t.toLowerCase());
+    tokens.forEach(token => {
+      if(token.startsWith("-")) {
+        recipes = recipes.filter(
+          recipe => recipe.ingredients.filter(
+            line => line.toLowerCase().indexOf(token.substring(1)) !== -1
+          ).length === 0
+        );
+      } else {
+        recipes = recipes.filter(
+          recipe => recipe.ingredients.filter(
+            line => line.toLowerCase().indexOf(token) !== -1
+          ).length > 0
+        );
+      }
+    });
   }
 
-  // Filter by time
   if(filters.timeFilter) {
     console.log("FIXME time filter not implemented yet");
   }
 
-  // Filter by tag
   if(filters.tagFilter) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags.filter(
@@ -92,14 +108,12 @@ const applyFilter = (recipes, filters) => {
     );
   }
 
-  // Filter by show untagged
   if(filters.showUntaggedFilter === false) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags.length > 0 && recipe.metaData.tags[0] !== "Untagged"
     );
   }
 
-  // Filter by missing shopping list
   if(filters.missingShoppingListFilter) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags &&
