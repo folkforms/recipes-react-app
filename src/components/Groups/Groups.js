@@ -5,9 +5,9 @@ import GroupsFilter from './GroupsFilter';
 import GroupItem from './GroupItem';
 
 const Groups = props => {
-  const [showUntaggedFilter, setShowUntaggedFilter] = useState(false);
+  const [showUntaggedFilter, setShowUntaggedFilter] = useState(true);
   const clearFilters = () => {
-    setShowUntaggedFilter(false);
+    setShowUntaggedFilter(true);
   }
   const filters = {
     showUntaggedFilter,
@@ -86,8 +86,7 @@ const splitUntaggedRecipes = tags => {
  * @param {object} filters filters to use
  */
 const applyFilter = (recipes, filters) => {
-  // Filter by show untagged
-  if(filters.showUntaggedFilter === false) {
+  if(!filters.showUntaggedFilter) {
     recipes = recipes.filter(
       recipe => recipe.metaData.tags.length > 0 && recipe.metaData.tags[0] !== "Untagged"
     );
