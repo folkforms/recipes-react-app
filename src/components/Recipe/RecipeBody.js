@@ -10,7 +10,10 @@ const RecipeBody = props => {
         <div className="item">
           {recipe.metaData.shoppingList.join(" / ")}
         </div>
-        <div className="section">Time: <span className="text">{recipe.metaData.time || "?"}</span></div>
+        {recipe.metaData.time
+          ? <div className="section">Time: <span className="text">{recipe.metaData.time || "?"}</span></div>
+          : null
+        }
         <div className="section">Ingredients</div>
         {recipe.ingredients.map(item => <div className="item" key={"ingredient-" + count++}>{item}</div>)}
         <div className="section">Directions</div>
