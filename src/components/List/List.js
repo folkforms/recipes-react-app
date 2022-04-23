@@ -4,7 +4,7 @@ import ListTitle from './ListTitle';
 import ListHeaderRow from './ListHeaderRow';
 import ListFilters from './ListFilters';
 import ListRows from './ListRows';
-import parseTime from '../Filter/parseTime';
+import parseTimeStrings from 'parse-time-strings';
 
 const List = props => {
   // Filters
@@ -98,7 +98,7 @@ const applyFilter = (recipes, filters) => {
   }
 
   if(filters.timeFilter) {
-    const maxTime = parseTime(filters.timeFilter);
+    const maxTime = parseTimeStrings(filters.timeFilter);
     if(maxTime !== -1) {
       recipes = recipes.filter(
         recipe => recipe.metaData.convertedTimeMinutes > 0 && recipe.metaData.convertedTimeMinutes <= maxTime
