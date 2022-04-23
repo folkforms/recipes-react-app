@@ -21,7 +21,7 @@ const ListFilters = props => {
       <span className="description">FILTER BY</span>
       <Filter label="Name:" type="text" value={nameFilter} onChange={setNameFilter} />
       <Filter label="Ingredients:" type="text" value={ingredientsFilter} onChange={setIngredientsFilter} className="ingredients" />
-      <Filter label="Time:" type="text" value={timeFilter} onChange={setTimeFilter} />
+      <Filter label="Max time:" type="text" value={timeFilter} onChange={setTimeFilter} />
       <Filter label="Tag:" type="text" value={tagFilter} onChange={setTagFilter} />
       <Filter label="Include untagged" type="checkbox" value={showUntaggedFilter} onChange={setShowUntaggedFilter} />
       <Filter label="No shopping list only" type="checkbox" value={missingShoppingListFilter} onChange={setMissingShoppingListFilter} />

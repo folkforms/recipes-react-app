@@ -4,6 +4,7 @@ import ListTitle from './ListTitle';
 import ListHeaderRow from './ListHeaderRow';
 import ListFilters from './ListFilters';
 import ListRows from './ListRows';
+import parseTime from '../Filter/parseTime';
 
 const List = props => {
   // Filters
@@ -97,7 +98,12 @@ const applyFilter = (recipes, filters) => {
   }
 
   if(filters.timeFilter) {
-    console.log("FIXME time filter not implemented yet");
+    const maxTime = parseTime(filters.timeFilter);
+    if(maxTime !== -1) {
+      recipes = recipes.filter(
+        recipe => recipe.metaData.convertedTimeMinutes > 0 && recipe.metaData.convertedTimeMinutes <= maxTime
+      );
+    }
   }
 
   if(filters.tagFilter) {

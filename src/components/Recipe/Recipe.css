@@ -3,6 +3,10 @@
   padding-top: 16px;
 }
 
+.recipe-body .section .text {
+  font-weight: 400;
+}
+
 .recipe-header {
   display: flex;
 }
