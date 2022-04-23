@@ -98,11 +98,17 @@ const applyFilter = (recipes, filters) => {
   }
 
   if(filters.timeFilter) {
-    const maxTime = parseTimeStrings(filters.timeFilter);
-    if(maxTime !== -1) {
+    if(filters.timeFilter === "none" || filters.timeFilter === "x" || filters.timeFilter === "-1") {
       recipes = recipes.filter(
-        recipe => recipe.metaData.convertedTimeMinutes > 0 && recipe.metaData.convertedTimeMinutes <= maxTime
+        recipe => !recipe.metaData.convertedTimeMinutes
       );
+    } else {
+      const maxTime = parseTimeStrings(filters.timeFilter);
+      if(maxTime !== -1) {
+        recipes = recipes.filter(
+          recipe => recipe.metaData.convertedTimeMinutes > 0 && recipe.metaData.convertedTimeMinutes <= maxTime
+        );
+      }
     }
   }
 
