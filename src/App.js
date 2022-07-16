@@ -9,9 +9,7 @@ function App() {
   const [showList, setShowList] = useState(true);
 
   const createToggleButton = newValue => (
-    <div className="toggle-button">
-      <button className="button" onClick={() => setShowList(newValue)}>{showList ? "Show Groups" : "Show List"}</button>
-    </div>
+    <button className="button" onClick={() => setShowList(newValue)}>{showList ? "Show Groups" : "Show List"}</button>
   );
 
   return (

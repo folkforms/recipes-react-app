@@ -21,7 +21,9 @@ const Groups = props => {
       <div className="groups">
         <div className="title-section">
           <span className="title">Groups</span>
-          {props.ToggleButton}
+          <div className="buttons">
+            {props.ToggleButton}
+          </div>
         </div>
         <GroupsFilter filters={filters} onClear={clearFilters} />
         <div className="data-section">

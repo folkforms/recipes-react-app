@@ -44,6 +44,11 @@ body {
   background-color: var(--page-bg);
 }
 
+.buttons {
+  display: flex;
+  margin-left: auto;
+}
+
 .button {
   background-color: var(--button-bg);
   color: var(--button-text);
@@ -57,7 +62,7 @@ body {
   background-color: var(--button-hover-bg);
 }
 
-.toggle-button {
+.button {
   margin: 6px;
 }
 

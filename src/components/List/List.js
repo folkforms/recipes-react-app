@@ -5,6 +5,7 @@ import ListHeaderRow from './ListHeaderRow';
 import ListFilters from './ListFilters';
 import ListRows from './ListRows';
 import parseTimeStrings from 'parse-time-strings';
+import RandomiseButton from './RandomiseButton';
 
 const List = props => {
   // Filters
@@ -14,6 +15,7 @@ const List = props => {
   const [tagFilter, setTagFilter] = useState("");
   const [showUntaggedFilter, setShowUntaggedFilter] = useState(true);
   const [missingShoppingListFilter, setMissingShoppingListFilter] = useState(false);
+  const [random, setRandom] = useState(0);
   const clearFilters = () => {
     setNameFilter("");
     setIngredientsFilter("");
@@ -37,14 +39,24 @@ const List = props => {
     setMissingShoppingListFilter,
   };
   const allRecipes = props.recipes.sort((a,b) => (a.name > b.name) ? 1 : -1);
-  const recipes = applyFilter(allRecipes, filters);
+  let recipes = applyFilter(allRecipes, filters);
+  if(random > 0) {
+    recipes = recipes.sort(() => Math.random() - 0.5);
+  }
+
+  const handleRandomiseClick = () => {
+    setRandom(random + 1);
+  }
 
   return (
     <>
       <div className="list">
         <div className="title-section">
           <ListTitle numRecipes={recipes.length} />
-          {props.ToggleButton}
+          <div className="buttons">
+            <RandomiseButton onClick={handleRandomiseClick} />
+            {props.ToggleButton}
+          </div>
         </div>
         <ListFilters filters={filters} onClear={clearFilters}/>
         <div className="list-data">
