@@ -17,7 +17,11 @@ const Groups = props => {
   let recipes = applyFilter(allRecipes, filters);
   recipes = showOnlyTheseTags(recipes, props.showOnlyTheseTags);
   const tags = orderByTags(recipes);
-  
+
+  const groupCssClass = props.showOnlyTheseTags && props.showOnlyTheseTags.length < 4
+    ? `group cols-${props.showOnlyTheseTags.length}`
+    : "group";
+
   return (
     <>
       <div className="groups">
@@ -30,7 +34,7 @@ const Groups = props => {
         <GroupsFilter filters={filters} onClear={clearFilters} />
         <div className="data-section">
           {Object.keys(tags).map(key => (
-            <div className="group" key={key}>
+            <div className={groupCssClass} key={key}>
               <div className="name">{key}</div>
               {tags[key].map(recipe => (
                 <GroupItem recipe={recipe} key={key + "-" + recipe.name} />

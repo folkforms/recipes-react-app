@@ -24,6 +24,18 @@
   margin: 0px 8px 8px 8px;
 }
 
+.groups .data-section .group.cols-1 {
+  width: 1048px;
+}
+
+.groups .data-section .group.cols-2 {
+  width: 516px;
+}
+
+.groups .data-section .group.cols-3 {
+  width: 338px;
+}
+
 .groups .data-section .group > .name {
   font-weight: 600;
   padding: 2px 4px;
