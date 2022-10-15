@@ -65,9 +65,9 @@ const showOnlyTheseTags = (recipes, showOnlyTheseTags) => {
     const recipeTags = a.metaData.tags;
     let keep = false;
     recipeTags.forEach(tag => {
-      if(showOnlyTheseTags.indexOf(tag) != -1) {
+      if(showOnlyTheseTags.indexOf(tag) !== -1) {
         keep = true;
-        a.metaData.tags = a.metaData.tags.filter(t => showOnlyTheseTags.indexOf(t) != -1);
+        a.metaData.tags = a.metaData.tags.filter(t => showOnlyTheseTags.indexOf(t) !== -1);
       }
     });
     return keep;

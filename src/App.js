@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className="app">
-      {pageNum == 0 ? <List recipes={recipes} buttons={buttons} /> : null}
-      {pageNum == 1 ? <Groups recipes={recipes} buttons={buttons} /> : null}
-      {pageNum == 2 ? <Groups recipes={recipes} showOnlyTheseTags={["cook-for-the-week", "weekend-lunch"]} buttons={buttons} /> : null}
+      {pageNum === 0 ? <List recipes={recipes} buttons={buttons} /> : null}
+      {pageNum === 1 ? <Groups recipes={recipes} buttons={buttons} /> : null}
+      {pageNum === 2 ? <Groups recipes={recipes} showOnlyTheseTags={["cook-for-the-week", "weekend-lunch"]} buttons={buttons} /> : null}
     </div>
   );
 }
