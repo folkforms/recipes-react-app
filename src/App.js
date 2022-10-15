@@ -16,7 +16,7 @@ function App() {
     <span>
       {createButton("List", 0)}
       {createButton("Groups", 1)}
-      {createButton("Foo", 2)}
+      {createButton("Weekend", 2)}
     </span>
   );
 
@@ -24,7 +24,7 @@ function App() {
     <div className="app">
       {pageNum == 0 ? <List recipes={recipes} buttons={buttons} /> : null}
       {pageNum == 1 ? <Groups recipes={recipes} buttons={buttons} /> : null}
-      {/* {pageNum == 2 ? <Groups recipes={recipes} buttons={buttons} /> : null} */}
+      {pageNum == 2 ? <Groups recipes={recipes} showOnlyTheseTags={["cook-for-the-week", "weekend-lunch"]} buttons={buttons} /> : null}
     </div>
   );
 }

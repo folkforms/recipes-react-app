@@ -14,8 +14,10 @@ const Groups = props => {
     setShowUntaggedFilter,
   };
   const allRecipes = props.recipes.sort((a,b) => (a.name > b.name) ? 1 : -1);
-  const recipes = applyFilter(allRecipes, filters);
+  let recipes = applyFilter(allRecipes, filters);
+  recipes = showOnlyTheseTags(recipes, props.showOnlyTheseTags);
   const tags = orderByTags(recipes);
+  
   return (
     <>
       <div className="groups">
@@ -53,6 +55,23 @@ const orderByTags = recipes => {
   });
   tags = reorderTags(tags);
   return splitUntaggedRecipes(tags);
+}
+
+const showOnlyTheseTags = (recipes, showOnlyTheseTags) => {
+  if(!showOnlyTheseTags) {
+    return recipes;
+  }
+  return recipes.filter(a => {
+    const recipeTags = a.metaData.tags;
+    let keep = false;
+    recipeTags.forEach(tag => {
+      if(showOnlyTheseTags.indexOf(tag) != -1) {
+        keep = true;
+        a.metaData.tags = a.metaData.tags.filter(t => showOnlyTheseTags.indexOf(t) != -1);
+      }
+    });
+    return keep;
+  });
 }
 
 /**
