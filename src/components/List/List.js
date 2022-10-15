@@ -55,7 +55,7 @@ const List = props => {
           <ListTitle numRecipes={recipes.length} />
           <div className="buttons">
             <RandomiseButton onClick={handleRandomiseClick} />
-            {props.ToggleButton}
+            {props.buttons}
           </div>
         </div>
         <ListFilters filters={filters} onClear={clearFilters}/>
@@ -91,7 +91,23 @@ const applyFilter = (recipes, filters) => {
   }
 
   if(filters.ingredientsFilter) {
-    const tokens = filters.ingredientsFilter.split(/\s+/).map(t => t.toLowerCase());
+
+    // FIXME Add additional synonyms here like if "pasta" add "spaghetti" and search for both.
+    // The issue is it ANDs all of the items, so converting "pasta" to "pasta", "spaghetti", "penne"
+    // will try to find all of those terms.
+
+    // FIXME Get this from a file
+    const synonyms = {
+      "pasta": [ "spaghetti", "penne" ]
+    }
+
+    // const expandTokens = (tokens, synonyms) => {
+    //   return tokens.map(t => synonyms[t] ? [t, synonyms[t]].flat() : t).flat();
+    // }
+
+    let tokens = filters.ingredientsFilter.split(/\s+/).map(t => t.toLowerCase());
+    // tokens = expandTokens(tokens, synonyms);
+    console.log(`tokens = ${JSON.stringify(tokens)}`);
     tokens.forEach(token => {
       if(token.startsWith("-")) {
         recipes = recipes.filter(

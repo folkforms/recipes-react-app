@@ -6,18 +6,25 @@ import Groups from './components/Groups/Groups';
 
 function App() {
 
-  const [showList, setShowList] = useState(true);
+  const [pageNum, setPageNum] = useState(0);
 
-  const createToggleButton = newValue => (
-    <button className="button" onClick={() => setShowList(newValue)}>{showList ? "Show Groups" : "Show List"}</button>
+  const createButton = (title, index) => (
+    <button className="button" onClick={() => setPageNum(index)}>{title}</button>
+  );
+
+  const buttons = (
+    <span>
+      {createButton("List", 0)}
+      {createButton("Groups", 1)}
+      {createButton("Foo", 2)}
+    </span>
   );
 
   return (
     <div className="app">
-      {showList
-        ? <List recipes={recipes} ToggleButton={createToggleButton(false)} />
-        : <Groups recipes={recipes} ToggleButton={createToggleButton(true)} />
-      }
+      {pageNum == 0 ? <List recipes={recipes} buttons={buttons} /> : null}
+      {pageNum == 1 ? <Groups recipes={recipes} buttons={buttons} /> : null}
+      {/* {pageNum == 2 ? <Groups recipes={recipes} buttons={buttons} /> : null} */}
     </div>
   );
 }
