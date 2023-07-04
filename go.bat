@@ -1,3 +1,3 @@
 @echo off
-set PORT=3001
+set PORT=4001
 call yarn start
