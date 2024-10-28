@@ -38,4 +38,4 @@ const reorderTags = tags => {
   return reorderedTags;
 }
 
-module.exports = reorderTags;
+export default reorderTags;

@@ -1,4 +1,5 @@
 @echo off
 set NODE_OPTIONS=--openssl-legacy-provider
 set PORT=4001
-call yarn start
+start http://localhost:4001/
+call npm run dev
